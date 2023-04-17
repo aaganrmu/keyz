@@ -14,6 +14,10 @@ pins = [
         board.GP9
        ]
 
+
+states = [False, False, False, False]
+shift = False
+
 keys = keypad.Keys(
         pins=pins,
         value_when_pressed=False,
@@ -21,16 +25,22 @@ keys = keypad.Keys(
         max_events=10
        )
 
-i = 0
-while i<100:
+while True:
+    event = keys.events.get()
+    if event:
+        print(event)
+        states[event.key_number] = event.pressed
+        if event.key_number == 0:
+            shift = event.pressed
+        if event.key_number in [1,2,3]:
+            if event.pressed:
+                times = 1 if not shift else 2
+                for i in range(times*2):
+                    led_onboard.value = not led_onboard.value    
+                    time.sleep(0.1)                
 
-time.sleep(1)
-led_onboard.on()
-time.sleep(1)
-led_onboard.off()
-time.sleep(1)
-led_onboard.on()
-time.sleep(1)
-led_onboard.off()
 
 
+for i in range(8):
+    led_onboard.value = not led_onboard.value    
+    time.sleep(0.1)
