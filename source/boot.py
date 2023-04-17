@@ -1,11 +1,14 @@
-import time
 import board
 import digitalio
+import time
+import usb_hid
 
 led_onboard = digitalio.DigitalInOut(board.LED)
 led_onboard.direction = digitalio.Direction.OUTPUT
 
 pauses = [0.1, 0.5, 0.0]
+
+
 
 for pause in pauses:
     led_onboard.value = True
