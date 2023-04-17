@@ -36,11 +36,5 @@ while True:
             if event.pressed:
                 times = 1 if not shift else 2
                 for i in range(times*2):
-                    led_onboard.value = not led_onboard.value    
-                    time.sleep(0.1)                
-
-
-
-for i in range(8):
-    led_onboard.value = not led_onboard.value    
-    time.sleep(0.1)
+                    led_onboard.value = not led_onboard.value
+                    time.sleep(0.1)
