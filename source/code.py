@@ -1,11 +1,12 @@
 import board
 import digitalio
 import keypad
-import time
+import supervisor
 import usb_hid
+from adafruit_hid.keyboard import Keyboard
+from adafruit_hid.keycode import Keycode
 
-led_onboard = digitalio.DigitalInOut(board.LED)
-led_onboard.direction = digitalio.Direction.OUTPUT
+supervisor.runtime.autoreload = False
 
 pins = [
         board.GP6,
@@ -13,8 +14,6 @@ pins = [
         board.GP8,
         board.GP9
        ]
-
-
 states = [False, False, False, False]
 shift = False
 
@@ -25,16 +24,22 @@ keys = keypad.Keys(
         max_events=10
        )
 
+keycodes = [Keycode.A, Keycode.B, Keycode.C]
+
+keyboard = Keyboard(usb_hid.devices)
+
 while True:
     event = keys.events.get()
     if event:
-        print(event)
         states[event.key_number] = event.pressed
         if event.key_number == 0:
             shift = event.pressed
         if event.key_number in [1,2,3]:
             if event.pressed:
-                times = 1 if not shift else 2
-                for i in range(times*2):
-                    led_onboard.value = not led_onboard.value
-                    time.sleep(0.1)
+                if states[1:4] == [True, True, True]:
+                    break
+                keycode = keycodes[event.key_number-1]
+                if shift:
+                    keyboard.send(Keycode.LEFT_SHIFT, keycode)
+                else:
+                    keyboard.send(keycode)
