@@ -24,22 +24,21 @@ keys = keypad.Keys(
         max_events=10
        )
 
-keycodes = [Keycode.A, Keycode.B, Keycode.C]
+keycodes = [Keycode.LEFT_SHIFT, Keycode.A, Keycode.B, Keycode.C]
 
 keyboard = Keyboard(usb_hid.devices)
 
 while True:
     event = keys.events.get()
     if event:
+        # Quit if all characters pushed
         states[event.key_number] = event.pressed
-        if event.key_number == 0:
-            shift = event.pressed
-        if event.key_number in [1,2,3]:
-            if event.pressed:
-                if states[1:4] == [True, True, True]:
-                    break
-                keycode = keycodes[event.key_number-1]
-                if shift:
-                    keyboard.send(Keycode.LEFT_SHIFT, keycode)
-                else:
-                    keyboard.send(keycode)
+        if states[1:4] == [True, True, True]:
+            keyboard.release_all()
+            break
+
+        keycode = keycodes[event.key_number]
+        if event.pressed:
+            keyboard.press(keycode)
+        else:
+            keyboard.release(keycode)
