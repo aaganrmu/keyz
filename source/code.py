@@ -8,19 +8,22 @@ from adafruit_hid.keycode import Keycode
 
 supervisor.runtime.autoreload = False
 
-pins = [
-        board.GP6,
-        board.GP7,
-        board.GP8,
-        board.GP9
+
+columns = [
+           board.GP9
+          ]
+
+rows = [
+        board.GP10,
+        board.GP11,
+        board.GP12,
+        board.GP13
        ]
 states = [False, False, False, False]
 shift = False
 
-keys = keypad.Keys(
-        pins=pins,
-        value_when_pressed=False,
-        pull=True,
+keys = keypad.KeyMatrix(
+        rows, columns,
         max_events=10
        )
 
@@ -39,6 +42,8 @@ while True:
 
         keycode = keycodes[event.key_number]
         if event.pressed:
+            print("X")
             keyboard.press(keycode)
         else:
+            print("O")
             keyboard.release(keycode)
