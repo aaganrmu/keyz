@@ -30,6 +30,8 @@ echo "transfering boot.py"
 $(cp boot.py $DEVICE)
 echo "transfering code.py"
 $(cp code.py $DEVICE)
+echo "transfering config"
+$(cp config $DEVICE)
 echo "creating folders"
 $(mkdir $DEVICE/keyz)
 $(mkdir $DEVICE/adafruit_hid)
@@ -40,10 +42,9 @@ for file in $localfiles; do
     $(cp $file $DEVICE/keyz)
 done
 
-cd ../adafruit_hid
-localfiles=$(ls)
-for file in $localfiles; do
-    echo "transfering adafruit_hid/$file"
-    $(cp $file $DEVICE/adafruit_hid)
-done
-
+# cd ../adafruit_hid
+# localfiles=$(ls)
+# for file in $localfiles; do
+#     echo "transfering adafruit_hid/$file"
+#     $(cp $file $DEVICE/adafruit_hid)
+# done

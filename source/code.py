@@ -3,31 +3,20 @@ import digitalio
 import keypad
 import supervisor
 import usb_hid
-from adafruit_hid.keyboard import Keyboard
-from adafruit_hid.keycode import Keycode
+from keyz.config import Config
+from keyz.keyboard import Keyboard
+
+config = Config('config')
 
 supervisor.runtime.autoreload = False
 
-
-columns = [
-           board.GP9
-          ]
-
-rows = [
-        board.GP10,
-        board.GP11,
-        board.GP12,
-        board.GP13
-       ]
 states = [False, False, False, False]
 shift = False
 
 keys = keypad.KeyMatrix(
-        rows, columns,
+        config.rows, config.columns,
         max_events=10
        )
-
-keycodes = [Keycode.LEFT_SHIFT, Keycode.A, Keycode.B, Keycode.C]
 
 keyboard = Keyboard(usb_hid.devices)
 
@@ -36,14 +25,13 @@ while True:
     if event:
         # Quit if all characters pushed
         states[event.key_number] = event.pressed
-        if states[1:4] == [True, True, True]:
-            keyboard.release_all()
-            break
+        if states == [True, True, True, True]:
+            continue
 
-        keycode = keycodes[event.key_number]
+        row, column = keys.key_number_to_row_column(event.key_number)
+        print(f'{row}, {column}')
+        keycode = config.keymatrix[row][column]
         if event.pressed:
-            print("X")
             keyboard.press(keycode)
         else:
-            print("O")
             keyboard.release(keycode)
