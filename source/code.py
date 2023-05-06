@@ -6,32 +6,35 @@ import usb_hid
 from keyz.config import Config
 from keyz.keyboard import Keyboard
 
+# setup
 config = Config('config')
-
 supervisor.runtime.autoreload = False
-
-states = [False, False, False, False]
-shift = False
-
 keys = keypad.KeyMatrix(
         config.rows, config.columns,
         max_events=10
        )
-
 keyboard = Keyboard(usb_hid.devices)
+layer = 0
 
 while True:
     event = keys.events.get()
     if event:
-        # Quit if all characters pushed
-        states[event.key_number] = event.pressed
-        if states == [True, True, True, True]:
-            continue
-
         row, column = keys.key_number_to_row_column(event.key_number)
-        print(f'{row}, {column}')
-        keycode = config.keymatrix[row][column]
-        if event.pressed:
-            keyboard.press(keycode)
-        else:
-            keyboard.release(keycode)
+        key = config.layers[layer][row][column]
+        if type(key) == int:
+            if event.pressed:
+                keyboard.press(key)
+            else:
+                keyboard.release(key)
+        if type(key) == str:
+            print(key[:7])
+            if key[0:7] == 'switch_':
+                switch = int(key[7:])
+                print(switch)
+                if event.pressed:
+                    layer += switch
+                    print(f'switch: ${switch}, += to ${layer}')
+                else:
+                    layer -= switch
+                    print(f'switch: ${switch}, -= to ${layer}')
+                keyboard.release_all()

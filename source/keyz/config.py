@@ -5,35 +5,59 @@ modes = {
     'none': 0,
     'columns': 1,
     'rows': 2,
-    'keys': 3
+    'layer': 3,
+    'password_stream': 4
 }
+
 
 class Config(object):
     def __init__(self, filename):
         file = open(filename, 'r')
         mode = modes['none']
+        layer = ""
         self.columns = []
         self.rows = []
-        self.keymatrix = []
+        self.layers = []
+        self.password_stream = ""
         for line in file:
             text = line.strip("\n ")
+            # ignore empty lines
+            if not text:
+                continue
+
+            # check to see if we're mode-switching
             try:
                 mode = modes[text]
                 continue
             except KeyError:
                 pass
+            # layers are a special case
+            if text[0:6] == 'layer_':
+                mode = modes['layer']
+                layer = int(text[6:])
+                while len(self.layers) - 1 < layer:
+                    self.layers.append([])
+                continue
+
+            # read lines using mode we're in
             if mode == modes['columns']:
                 pin = getattr(board, f'GP{text}')
                 self.columns.append(pin)
+                continue
             if mode == modes['rows']:
                 pin = getattr(board, f'GP{text}')
                 self.rows.append(pin)
-            if mode == modes['keys']:
+                continue
+            if mode == modes['layer']:
                 keyrow = []
                 keynames = text.split(",")
                 for keyname in keynames:
-                    key = getattr(Keycode, keyname.strip(" "))
-                    keyrow.append(key)
-                self.keymatrix.append(keyrow)
-
-            print(f'{mode}: {text}')
+                    try:
+                        key = getattr(Keycode, keyname.strip(" "))
+                        keyrow.append(key)
+                    except AttributeError:
+                        keyrow.append(keyname.strip(" "))
+                self.layers[layer].append(keyrow)
+                continue
+            if mode == modes['password_stream']:
+                self.password_stream = text
