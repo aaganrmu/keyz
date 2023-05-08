@@ -3,7 +3,30 @@ columns
 11
 12
 13
+
 rows
 9
-keys
-LEFT_SHIFT, A, B, C
+
+layer_0
+switch_1, switch_2, switch_4, ZERO
+
+layer_1
+switch_1, switch_2, switch_4, ONE
+
+layer_2
+switch_1, switch_2, switch_4, TWO
+
+layer_3
+switch_1, switch_2, switch_4, THREE
+
+layer_4
+switch_1, switch_2, switch_4, FOUR
+
+layer_5
+switch_1, switch_2, switch_4, FIVE
+
+layer_6
+switch_1, switch_2, switch_4, SIX
+
+layer_7
+switch_1, switch_2, switch_4, SEVEN
