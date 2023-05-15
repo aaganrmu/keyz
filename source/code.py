@@ -11,7 +11,8 @@ config = Config('config')
 supervisor.runtime.autoreload = False
 keys = keypad.KeyMatrix(
         config.rows, config.columns,
-        max_events=10
+        max_events=10,
+        columns_to_anodes=True
        )
 keyboard = Keyboard(usb_hid.devices)
 layer = 0
@@ -27,10 +28,8 @@ while True:
             else:
                 keyboard.release(key)
         if type(key) == str:
-            print(key[:7])
             if key[0:7] == 'switch_':
                 switch = int(key[7:])
-                print(switch)
                 if event.pressed:
                     layer += switch
                     print(f'switch: ${switch}, += to ${layer}')
