@@ -36,10 +36,3 @@ for file in $localfiles; do
     echo "transfering keyz/$file"
     $(cp $file $DEVICE/keyz)
 done
-
-# cd ../adafruit_hid
-# localfiles=$(ls)
-# for file in $localfiles; do
-#     echo "transfering adafruit_hid/$file"
-#     $(cp $file $DEVICE/adafruit_hid)
-# done
