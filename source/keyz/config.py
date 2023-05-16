@@ -6,7 +6,8 @@ modes = {
     'columns': 1,
     'rows': 2,
     'layer': 3,
-    'password_stream': 4
+    'password_stream': 4,
+    'lock': 5
 }
 
 
@@ -19,6 +20,7 @@ class Config(object):
         self.rows = []
         self.layers = []
         self.password_stream = ""
+        self.lock = None
         for line in file:
             text = line.strip("\n ")
             # ignore empty lines
@@ -61,3 +63,5 @@ class Config(object):
                 continue
             if mode == modes['password_stream']:
                 self.password_stream = text
+            if mode == modes['lock']:
+                self.lock = int(text)

@@ -2,6 +2,7 @@ import board
 import digitalio
 import keypad
 import supervisor
+import time
 import usb_hid
 from keyz.config import Config
 from keyz.keyboard import Keyboard
@@ -16,6 +17,10 @@ keys = keypad.KeyMatrix(
        )
 keyboard = Keyboard(usb_hid.devices)
 layer = 0
+
+
+led_onboard = digitalio.DigitalInOut(board.LED)
+led_onboard.direction = digitalio.Direction.OUTPUT
 
 while True:
     event = keys.events.get()
@@ -37,3 +42,9 @@ while True:
                     layer -= switch
                     print(f'switch: ${switch}, -= to ${layer}')
                 keyboard.release_all()
+            if key[0:5] == 'mode_':
+                mode = int(key[5:])
+                if event.pressed:
+                    layer = mode
+                    print(f'Set layer to ${layer}')
+                    keyboard.release_all()
