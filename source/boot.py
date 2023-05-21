@@ -1,17 +1,18 @@
 import board
 import digitalio
-import time
-import usb_hid
-
-led_onboard = digitalio.DigitalInOut(board.LED)
-led_onboard.direction = digitalio.Direction.OUTPUT
-
-pauses = [0.1, 0.5, 0.0]
+import storage
 
 
 
-for pause in pauses:
-    led_onboard.value = True
-    time.sleep(0.1)
-    led_onboard.value = False
-    time.sleep(time)
+# Disable USB drive if GPIO14 is not connected to ground.
+# There's a physical lock connected to it.
+
+lock = digitalio.DigitalInOut(board.GP14)
+lock.direction = digitalio.Direction.INPUT
+lock.pull = digitalio.Pull.UP
+if lock.value:
+    print(f'Boot: disabling drive')
+    storage.disable_usb_drive()
+else:
+    print(f'Boot: enabling drive')
+    storage.enable_usb_drive()
