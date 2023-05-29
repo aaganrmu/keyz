@@ -6,7 +6,7 @@ modes = {
     'columns': 1,
     'rows': 2,
     'layer': 3,
-    'password_stream': 4
+    'password_pad': 4
 }
 
 
@@ -44,10 +44,12 @@ class Config(object):
                 pin = getattr(board, f'GP{text}')
                 self.columns.append(pin)
                 continue
+
             if mode == modes['rows']:
                 pin = getattr(board, f'GP{text}')
                 self.rows.append(pin)
                 continue
+
             if mode == modes['layer']:
                 keyrow = []
                 keynames = text.split(",")
@@ -59,5 +61,6 @@ class Config(object):
                         keyrow.append(keyname.strip(" "))
                 self.layers[layer].append(keyrow)
                 continue
-            if mode == modes['password_stream']:
-                self.password_stream = text
+
+            if mode == modes['password_pad']:
+                self.password_pad = text
