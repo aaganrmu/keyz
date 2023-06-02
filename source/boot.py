@@ -13,3 +13,6 @@ if lock.value:
 else:
     print(f'Boot: enabling drive')
     storage.enable_usb_drive()
+
+
+
