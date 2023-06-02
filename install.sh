@@ -2,7 +2,6 @@
 
 DEVICE="/media/elmarw/CIRCUITPY/"
 
-
 echo "cleaning"
 remotefiles=$(ls $DEVICE)
 for file in $remotefiles; do
