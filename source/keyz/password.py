@@ -17,12 +17,14 @@ class Password:
         if not pressed:
             return False
         if code is ENTER:
+            if self._stream is "":
+                return False
             password = self._generate()
             self._reset_stream()
             return password
         self._stream += code
         return False
-
+        
     def _generate(self):
         i_str = 0
         i_pad = 0
