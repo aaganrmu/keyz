@@ -1,12 +1,13 @@
 import board
 import digitalio
 import keypad
-import supervisor
+import time
 import usb_hid
 from keyz.config import Config
 from keyz.keyboard import Keyboard
 from keyz.layer import Layer
 from keyz.password import Password
+from keyz.keydict import keydict
 
 # setup
 config = Config('config')
@@ -17,7 +18,7 @@ keys = keypad.KeyMatrix(
        )
 keyboard = Keyboard(usb_hid.devices)
 layer = Layer()
-password = Password(pad=config.password_pad)
+password = Password()
 
 # Main loop
 while True:
@@ -25,7 +26,6 @@ while True:
     if event:
         row, column = keys.key_number_to_row_column(event.key_number)
         key = config.layers[layer.current][row][column]
-
         # Push a key if a keycode is stored
         if type(key) == int:
             if event.pressed:
@@ -51,6 +51,14 @@ while True:
                     if refresh:
                         keyboard.release_all()
 
+            # Do somethin related to password manaer
             if key[0:9] == 'PASSWORD_':
                 code = key[9:]
-                password.process(code)
+                password_string = password.process(code, event.pressed)
+                if password_string:
+                    for character in password_string:
+                        keycode = keydict[character]
+                        keyboard.press(keycode)
+                        # time.sleep(0.005)
+                        keyboard.release(keycode)
+                        # time.sleep(0.005)
