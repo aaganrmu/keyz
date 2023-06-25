@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DEVICE="/media/elmarw/CIRCUITPY/"
+DEVICE="/media/elmarw/KEYZ/"
 
 echo "cleaning"
 remotefiles=$(ls $DEVICE)
