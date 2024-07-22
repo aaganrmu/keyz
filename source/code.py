@@ -36,7 +36,7 @@ while True:
         # Do something special if it's a string
         if type(key) == str:
 
-            # Add value to layer (for standard layers, can chord, nice with latching switches)
+            # Add value to layer (for standard layers, can chord, or use with latching switches)
             if key[0:12] == 'SHIFT_LAYER_':
                 shift = int(key[12:])
                 refresh = layer.set_shift(shift, event.pressed)
