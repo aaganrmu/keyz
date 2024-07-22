@@ -59,6 +59,7 @@ while True:
                     for character in password_string:
                         keycode = keydict[character]
                         keyboard.press(keycode)
-                        # time.sleep(0.005)
                         keyboard.release(keycode)
-                        # time.sleep(0.005)
+                    enter = keydict["ENTER"]
+                    keyboard.press(enter)
+                    keyboard.release(enter)
