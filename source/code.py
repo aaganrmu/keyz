@@ -14,7 +14,7 @@ config = Config('config')
 keys = keypad.KeyMatrix(
         config.rows, config.columns,
         max_events=10,
-        columns_to_anodes=True
+        columns_to_anodes=False
        )
 keyboard = Keyboard(usb_hid.devices)
 layer = Layer()
