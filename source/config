@@ -5,6 +5,14 @@ columns
 8
 9
 10
+18
+19
+20
+21
+22
+26
+27
+28
 
 rows
 0
@@ -14,8 +22,8 @@ rows
 4
 
 layer_0
-A, B, C, D, E, F
-A, B, C, D, E, F
-A, B, C, D, E, F
-A, B, C, D, E, F
-A, B, C, D, E, F
+`          1       2   3 4 5         6 7 8 9 0 -           =          BACKSPACE
+TAB        Q       W   E R T         Y U I O P [           ]          \
+CAPS_LOCK  A       S   D F G         H J K L ; '           ENTER      X
+SHIFT      Z       X   C V B         N M , . / RIGHT_SHIFT UP_ARROW   X
+CONTROL    WINDOWS ALT X SPACE X X SPACE X X X LEFT_ARROW  DOWN_ARROW RIGHT_ARROW

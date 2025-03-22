@@ -1,5 +1,6 @@
 import board
 from .keycode import Keycode
+from keyz.keydict import keydict
 
 modes = {
     'none': 0,
@@ -52,10 +53,13 @@ class Config(object):
 
                 if mode == modes['layer']:
                     keyrow = []
-                    keynames = text.split(",")
+                    keynames = text.split(" ")
                     for keyname in keynames:
+                        if len(keyname) == 0:
+                            continue
                         try:
-                            key = getattr(Keycode, keyname.strip(" "))
+                            key = keydict[keyname]
+                            # key = getattr(Keycode, keyname.strip(" "))
                             keyrow.append(key)
                         except AttributeError:
                             keyrow.append(keyname.strip(" "))
