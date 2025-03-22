@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DEVICE="/media/aaganrmu/CIRCUITPY/"
+DEVICE="/media/aaganrmu/KEYZ/"
 
 echo "installing"
 cd source
