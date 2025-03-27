@@ -19,4 +19,10 @@ class Grounds(object):
             pressed = not(pin.value)
             if pressed != self._states[index]:
                 self._states[index] = pressed
-                return {"column": index, "pressed": pressed}
+                return Event(index, pressed)
+
+class Event():
+    def __init__(self, column = 0, pressed = 0):
+        self.row = -1
+        self.column = column
+        self.pressed = pressed

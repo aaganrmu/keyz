@@ -1,6 +1,6 @@
 import board
-from .keycode import Keycode
-from keyz.keydict import keydict
+from .keydict import keydict, mediadict
+from .keyaction import KeyAction, handlers
 
 modes = {
     'none': 0,
@@ -9,7 +9,6 @@ modes = {
     'ground': 3, # Keys bound to ground
     'layer': 4, # Keys in a matrix
 }
-
 
 class Config(object):
     def __init__(self, filename):
@@ -71,10 +70,45 @@ class Config(object):
                     for keyname in keynames:
                         if len(keyname) == 0:
                             continue
-                        try:
-                            key = keydict[keyname]
-                            keyrow.append(key)
-                        except KeyError:
-                            keyrow.append(keyname)
+                        action = generate_key_action(keyname)
+                        keyrow.append(action)
                     self.layers[layer].append(keyrow)
                     continue
+
+def generate_key_action(keyname):
+    action = KeyAction()
+
+    if keyname == "NO":
+        return action
+
+    # check if this is a normal key:
+    try:
+        action.data = keydict[keyname]
+        action.handler = handlers["key"]
+        return action
+    except KeyError:
+        pass
+
+    # check if this is a media key:
+    try:
+        action.data = mediadict[keyname]
+        action.handler = handlers["media"]
+        return action
+    except KeyError:
+        pass
+
+    # check if this is a layer setter:
+    if keyname[0:10] == 'SET_LAYER_':
+        action.data = int(keyname[10:])
+        action.handler = handlers["layer_set"]
+        return action
+    
+    # check if this is a layer shifter:
+    if keyname[0:12] == 'SHIFT_LAYER_':
+        action.data = int(keyname[12:])
+        action.handler = handlers["layer_shift"]
+        return action
+
+    # return if nothing matches
+    print(f"could not match '{keyname}'")
+    return action
