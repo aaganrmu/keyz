@@ -38,8 +38,6 @@ while True:
         pressed = event["pressed"]
         case = config.layers[layer.current][-1][column]
 
-        print(f'Column: {column}, Pressed: {pressed}, Layer: {layer.current}, Case: {case}')
-    
     # Push a key if a keycode is stored
     if type(case) == int:
         if pressed:
