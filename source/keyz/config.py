@@ -1,8 +1,6 @@
 import board
-from .keycode import Keycode
 from .keydict import keydict, mediadict
 from .keyaction import KeyAction, handlers
-
 
 modes = {
     'none': 0,
@@ -11,7 +9,6 @@ modes = {
     'ground': 3, # Keys bound to ground
     'layer': 4, # Keys in a matrix
 }
-
 
 class Config(object):
     def __init__(self, filename):
@@ -81,6 +78,9 @@ class Config(object):
 def generate_key_action(keyname):
     action = KeyAction()
 
+    if keyname == "NO":
+        return action
+
     # check if this is a normal key:
     try:
         action.data = keydict[keyname]
@@ -105,7 +105,7 @@ def generate_key_action(keyname):
     
     # check if this is a layer shifter:
     if keyname[0:12] == 'SHIFT_LAYER_':
-        action.data = int(case[12:])
+        action.data = int(keyname[12:])
         action.handler = handlers["layer_shift"]
         return action
 
