@@ -26,21 +26,25 @@ grounds = Grounds(config.ground)
 
 # Main loop
 while True:
+    # Get the next event and unpack it
     event = keys.events.get()
     if event:
         # handle key events
         row, column = keys.key_number_to_row_column(event.key_number)
     else: 
-        # handle grounds if nothing else is happening
+        # handle ground events if there are no key events
         event = grounds.get_event()
         if not(event):
             continue
         row = event.row
         column = event.column
-        pressed = event.pressed
-    
-    action = config.layers[layer.current][row][column]
     pressed = event.pressed
+
+    # Get the action that matches the event
+    try:
+        action = config.layers[layer.current][row][column]
+    except IndexError:
+        continue
     
     # Skip unused keys
     if action.handler == handlers["none"]:
