@@ -1,21 +1,21 @@
 # Normal layer
 layer_0
-`          1       2   3             4     5             6  7     8         9             0             -           =          ESCAPE
-TAB        Q       W   E             R     T             Y  U     I         O             P             [           ]          BACKSPACE
-CAPS_LOCK  A       S   D             F     G             H  J     K         L             ;             '           ENTER      \
-SHIFT      Z       X   C             V     B             N  M     ,         .             /             RIGHT_SHIFT UP_ARROW   NO
-CONTROL    WINDOWS ALT SHIFT_LAYER_2 SPACE SHIFT_LAYER_4 NO SPACE RIGHT_ALT SHIFT_LAYER_1 RIGHT_CONTROL LEFT_ARROW  DOWN_ARROW RIGHT_ARROW
-# grounded controls:
+`         1   2   3             4     5             6  7     8         9             0          -           =          ESCAPE
+TAB       Q   W   E             R     T             Y  U     I         O             P          [           ]          BACKSPACE
+CAPS_LOCK A   S   D             F     G             H  J     K         L             ;          '           ENTER      \
+SHIFT     Z   X   C             V     B             N  M     ,         .             /          RIGHT_SHIFT UP_ARROW   NO
+CTRL      WIN ALT SHIFT_LAYER_2 SPACE SHIFT_LAYER_4 NO SPACE RIGHT_ALT SHIFT_LAYER_1 RIGHT_CTRL LEFT_ARROW  DOWN_ARROW RIGHT_ARROW
+# grounded CTRLs:
 SHIFT_LAYER_0 SHIFT_LAYER_10 SHIFT_LAYER_20 SHIFT_LAYER_30
 
 # Fn layer
 layer_1
-ESCAPE F1 F2 F3 F4 F5 F6 F7 F8 F9 F10 F11 F12 NO
-NO NO NO NO NO NO NO NO NO NO NO NO NO NO
-NO NO NO NO NO NO NO NO BRIGHTNESS_DECREMENT BRIGHTNESS_INCREMENT NO NO NO NO
-SHIFT   NO NO NO NO NO NO MUTE VOLUME_DECREMENT VOLUME_INCREMENT NO STOP NO
-CONTROL WINDOWS ALT NO NO NO NO NO RIGHT_ALT SHIFT_LAYER_1 RIGHT_CONTROL SCAN_PREVIOUS_TRACK PLAY_PAUSE SCAN_NEXT_TRACK
-# grounded controls:
+ESCAPE F1  F2  F3            F4    F5            F6 F7    F8                   F9                   F10        F11                 F12        NO
+NO     NO  NO  NO            NO    NO            NO NO    NO                   NO                   NO         NO                  NO         DELETE
+NO     NO  NO  NO            NO    NO            NO NO    BRIGHTNESS_DECREMENT BRIGHTNESS_INCREMENT NO         NO                  NO         NO
+SHIFT  NO  NO  NO            NO    NO            NO MUTE  VOLUME_DECREMENT     VOLUME_INCREMENT     NO         NO                  STOP       NO
+CTRL   WIN ALT SHIFT_LAYER_2 SPACE SHIFT_LAYER_4 NO SPACE RIGHT_ALT            SHIFT_LAYER_1        RIGHT_CTRL SCAN_PREVIOUS_TRACK PLAY_PAUSE SCAN_NEXT_TRACK
+# grounded CTRLs:
 SHIFT_LAYER_0 SHIFT_LAYER_10 SHIFT_LAYER_20 SHIFT_LAYER_30
 
 # Drop layer
@@ -24,8 +24,8 @@ NO NO NO NO NO NO NO NO NO NO NO NO NO NO
 NO NO NO NO NO NO NO NO NO NO NO NO NO NO
 NO NO NO NO NO NO NO NO NO NO NO NO NO NO
 NO NO NO NO NO NO NO NO NO NO NO NO NO NO
-NO NO NO SHIFT_LAYER_2 NO SHIFT_LAYER_4 NO NO NO SHIFT_LAYER_1 NO NO NO NO
-# grounded controls:
+CTRL      WIN ALT SHIFT_LAYER_2 NO SHIFT_LAYER_4 NO NO RIGHT_ALT SHIFT_LAYER_1 NO NO NO
+# grounded CTRLs:
 SHIFT_LAYER_0 SHIFT_LAYER_10 SHIFT_LAYER_20 SHIFT_LAYER_30
 
 # Raise layer (Cursor movement)
@@ -34,18 +34,18 @@ NO NO NO NO NO NO NO NO NO NO NO NO NO NO
 NO NO NO PAGE_UP NO NO NO NO UP_ARROW NO NO NO NO NO
 NO NO HOME  PAGE_DOWN END NO NO LEFT_ARROW DOWN_ARROW RIGHT_ARROW NO NO NO NO
 SHIFT NO NO NO NO NO NO NO NO NO NO NO NO NO
-CONTROL NO NO SHIFT_LAYER_2 NO SHIFT_LAYER_4 NO NO NO SHIFT_LAYER_1 NO NO NO NO
-# grounded controls:
+CTRL      WIN ALT SHIFT_LAYER_2 NO SHIFT_LAYER_4 NO NO RIGHT_ALT SHIFT_LAYER_1 NO NO NO
+# grounded CTRLs:
 SHIFT_LAYER_0 SHIFT_LAYER_10 SHIFT_LAYER_20 SHIFT_LAYER_30
 
 # Numpad layer
 layer_10
-`          1       2          3          4             5       6 7     8 9 0             KEYPAD_FORWARD_SLASH KEYPAD_ASTERISK KEYPAD_MINUS
-TAB        Q       W          UP_ARROW   R             T       Y U     I O KEYPAD_SEVEN  KEYPAD_EIGHT         KEYPAD_NINE     KEYPAD_PLUS
-CAPS_LOCK  A       LEFT_ARROW DOWN_ARROW RIGHT_ARROW   G       H J     K L KEYPAD_FOUR   KEYPAD_FIVE          KEYPAD_EIGHT    KEYPAD_PLUS
-SHIFT      Z       X          C          V             B       N M     , . KEYPAD_ONE    KEYPAD_TWO           KEYPAD_THREE    KEYPAD_ENTER
-CONTROL    WINDOWS ALT        X          SPACE         X       SPACE X X KEYPAD_ZERO     KEYPAD_PERIOD          KEYPAD_PERIOD     KEYPAD_ENTER
-# grounded controls:
+NO        NO  NO         NO         NO            NO      NO    NO NO NO KP_NUMLOCK KP_/ KP_*      KP_-
+TAB       NO  NO         UP_ARROW   NO            NO      Y     U  I  O  KP_7       KP_8 KP_9      KP_+
+CAPS_LOCK A   LEFT_ARROW DOWN_ARROW RIGHT_ARROW   G       H     J  K  L  KP_4       KP_5 KP_6      KP_+
+SHIFT     Z   X          C          V             B       N     M  ,  .  KP_1       KP_2 KP_3      KP_ENTER
+CTRL      WIN ALT        NO         SPACE         NO      SPACE NO NO NO KP_0       KP_. BACKSPACE KP_ENTER
+# grounded CTRLs:
 SHIFT_LAYER_0 SHIFT_LAYER_10 SHIFT_LAYER_20 SHIFT_LAYER_30
 
 layer_20
@@ -54,7 +54,7 @@ NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO
 NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO
 NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO
 NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO
-# grounded controls:
+# grounded CTRLs:
 SHIFT_LAYER_0 SHIFT_LAYER_10 SHIFT_LAYER_20 SHIFT_LAYER_30
 
 layer_30
@@ -63,7 +63,7 @@ NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO
 NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO
 NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO
 NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO
-# grounded controls:
+# grounded CTRLs:
 SHIFT_LAYER_0 SHIFT_LAYER_10 SHIFT_LAYER_20 SHIFT_LAYER_30
 
 columns
