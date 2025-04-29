@@ -44,6 +44,7 @@ while True:
     try:
         action = config.layers[layer.current][row][column]
     except IndexError:
+        print(f'ERROR: could not find key l{layer.current} r{row}c{column}')
         continue
     
     # Skip unused keys
@@ -74,7 +75,7 @@ while True:
 
     if action.handler == handlers["layer_set"]:
         if pressed:
-            refresh = layer.set_offset(offset)
+            refresh = layer.set_offset(action.data)
             if refresh:
                 keyboard.release_all()
         continue
