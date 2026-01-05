@@ -34,7 +34,7 @@ class Config(object):
                     continue
                 except KeyError:
                     pass
-                # layers are a special case
+                # layers are a special mode
                 if text[0:6] == 'layer_':
                     mode = modes['layer']
                     layer = int(text[6:])

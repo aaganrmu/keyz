@@ -5,8 +5,8 @@ import storage
 DRIVE_NAME = "KEYZ"
 LOCK_IO = board.GP12
 
-# Disable USB drive if GPIO14 is not connected to ground.
-# There's a physical lock connected to it.
+# Disable USB drive if chosen GPIO is not connected to ground.
+# Can be used with a physical lock, a mode switch, or even a single key.
 lock = digitalio.DigitalInOut(LOCK_IO)
 lock.direction = digitalio.Direction.INPUT
 lock.pull = digitalio.Pull.UP

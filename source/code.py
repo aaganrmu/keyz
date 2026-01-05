@@ -1,6 +1,5 @@
-import board
+
 import keypad
-import time
 import usb_hid
 from keyz.config import Config
 from keyz.consumer_control import ConsumerControl
