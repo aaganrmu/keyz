@@ -38,13 +38,14 @@ CTRL WIN ALT ALAY_2 NO ALAY_4 NO NO RIGHT_ALT ALAY_1 NO NO NO NO
 # grounded CTRLs:
 ALAY_0 ALAY_10 ALAY_20 ALAY_0
 
-# Raise layer (Cursor movement, numpad)
+
+# Raise layer (Cursor movement, numpad)`
 layer_4
-NO    NO  NO   NO        NO  NO     NO NO         NO         NO          KP_NUMLOCK KP_/ KP_* KP_-
-NO    NO  NO   PAGE_UP   NO  NO     NO NO         UP_ARROW   NO          KP_7       KP_8 KP_9 BACKSPACE
-NO    NO  HOME PAGE_DOWN END NO     NO LEFT_ARROW DOWN_ARROW RIGHT_ARROW KP_4       KP_5 KP_6 KP_+
-SHIFT NO  NO   NO        NO  NO     NO NO         NO         NO          KP_1       KP_2 KP_3 KP_ENTER
-CTRL  WIN ALT  ALAY_2    NO  ALAY_4 NO NO         RIGHT_ALT  ALAY_1      KP_0       KP_. BSP  KP_ENTER
+NO    NO  NO   NO     NO    NO     NO  NO   NO        NO          KP_NUMLOCK KP_/ KP_* KP_-
+NO    NO  NO   UP     NO    NO     NO  NO   PAGE_UP   NO          KP_7       KP_8 KP_9 BSP
+NO    NO  LEFT DOWN   RIGHT NO     NO  HOME PAGE_DOWN END         KP_4       KP_5 KP_6 KP_+
+SHIFT NO  NO   NO     NO    NO     NO  NO   NO        NO          KP_1       KP_2 KP_3 KP_ENTER
+CTRL  WIN ALT  ALAY_2 NO    ALAY_4 NO  NO   RIGHT_ALT ALAY_1      KP_0       KP_. BSP  KP_ENTER
 # grounded CTRLs:
 ALAY_0 ALAY_10 ALAY_20 ALAY_0
 
@@ -82,11 +83,11 @@ ALAY_0 ALAY_10 ALAY_20 ALAY_0
 
 # Numpad layer
 layer_10
-NO    NO  NO   NO        NO  NO NO NO         NO         NO          KP_NUMLOCK KP_/ KP_* KP_-
-NO    NO  NO   PAGE_UP   NO  NO NO NO         UP_ARROW   NO          KP_7       KP_8 KP_9 BACKSPACE
-NO    NO  HOME PAGE_DOWN END NO NO LEFT_ARROW DOWN_ARROW RIGHT_ARROW KP_4       KP_5 KP_6 KP_+
-SHIFT NO  NO   NO        NO  NO NO NO         NO         NO          KP_1       KP_2 KP_3 KP_ENTER
-CTRL  WIN ALT  NO        NO  NO NO NO         RIGHT_ALT  NO          KP_0       KP_. BSP  KP_ENTER
+NO    NO  NO   NO     NO    NO     NO  NO   NO        NO          KP_NUMLOCK KP_/ KP_* KP_-
+NO    NO  NO   UP     NO    NO     NO  NO   PAGE_UP   NO          KP_7       KP_8 KP_9 BSP
+NO    NO  LEFT DOWN   RIGHT NO     NO  HOME PAGE_DOWN END         KP_4       KP_5 KP_6 KP_+
+SHIFT NO  NO   NO     NO    NO     NO  NO   NO        NO          KP_1       KP_2 KP_3 KP_ENTER
+CTRL  WIN ALT  NO     NO    NO      NO NO   RIGHT_ALT NO          KP_0       KP_. BSP  KP_ENTER
 # grounded CTRLs:
 ALAY_0 ALAY_10 ALAY_20 ALAY_0
 
