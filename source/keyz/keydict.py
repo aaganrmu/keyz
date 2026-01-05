@@ -39,6 +39,7 @@ keydict = {
 "\n" : 0x28,
 "RETURN" : 0x28,
 "ESCAPE" : 0x29,
+"BSP" : 0x2A,
 "BACKSPACE" : 0x2A,
 "TAB" : 0x2B,
 "SPACE" : 0x2C,

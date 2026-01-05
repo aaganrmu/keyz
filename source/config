@@ -1,70 +1,104 @@
 # Normal layer
 layer_0
-`         1   2   3             4     5             6  7     8         9             0          -           =          ESCAPE
-TAB       Q   W   E             R     T             Y  U     I         O             P          [           ]          BACKSPACE
-CAPS_LOCK A   S   D             F     G             H  J     K         L             ;          '           ENTER      \
-SHIFT     Z   X   C             V     B             N  M     ,         .             /          RIGHT_SHIFT UP_ARROW   NO
-CTRL      WIN ALT SHIFT_LAYER_2 SPACE SHIFT_LAYER_4 NO SPACE RIGHT_ALT SHIFT_LAYER_1 RIGHT_CTRL LEFT_ARROW  DOWN_ARROW RIGHT_ARROW
+`         1   2   3      4     5      6  7     8         9      0          -           =          ESCAPE
+TAB       Q   W   E      R     T      Y  U     I         O      P          [           ]          BACKSPACE
+CAPS_LOCK A   S   D      F     G      H  J     K         L      ;          '           ENTER      \
+SHIFT     Z   X   C      V     B      N  M     ,         .      /          RIGHT_SHIFT UP_ARROW   NO
+CTRL      WIN ALT ALAY_2 SPACE ALAY_4 NO SPACE RIGHT_ALT ALAY_1 RIGHT_CTRL LEFT_ARROW  DOWN_ARROW RIGHT_ARROW
 # grounded CTRLs:
-SHIFT_LAYER_0 SHIFT_LAYER_10 SHIFT_LAYER_20 SHIFT_LAYER_30
+ALAY_0 ALAY_10 ALAY_20 ALAY_0
 
 # Fn layer
 layer_1
-ESCAPE F1  F2  F3            F4    F5            F6 F7    F8                   F9                   F10        F11                 F12        NO
-NO     NO  NO  NO            NO    NO            NO NO    NO                   NO                   NO         NO                  NO         DELETE
-NO     NO  NO  NO            NO    NO            NO NO    BRIGHTNESS_DECREMENT BRIGHTNESS_INCREMENT NO         NO                  NO         NO
-SHIFT  NO  NO  NO            NO    NO            NO MUTE  VOLUME_DECREMENT     VOLUME_INCREMENT     NO         NO                  STOP       NO
-CTRL   WIN ALT SHIFT_LAYER_2 SPACE SHIFT_LAYER_4 NO SPACE RIGHT_ALT            SHIFT_LAYER_1        RIGHT_CTRL SCAN_PREVIOUS_TRACK PLAY_PAUSE SCAN_NEXT_TRACK
+ESCAPE F1  F2  F3     F4    F5     F6 F7    F8                   F9                   F10        F11                 F12        NO
+NO     NO  NO  NO     NO    NO     NO NO    NO                   NO                   NO         NO                  NO         DELETE
+NO     NO  NO  NO     NO    NO     NO NO    BRIGHTNESS_DECREMENT BRIGHTNESS_INCREMENT NO         NO                  NO         NO
+SHIFT  NO  NO  NO     NO    NO     NO MUTE  VOLUME_DECREMENT     VOLUME_INCREMENT     NO         NO                  STOP       NO
+CTRL   WIN ALT ALAY_2 SPACE ALAY_4 NO SPACE RIGHT_ALT            ALAY_1               RIGHT_CTRL SCAN_PREVIOUS_TRACK PLAY_PAUSE SCAN_NEXT_TRACK
 # grounded CTRLs:
-SHIFT_LAYER_0 SHIFT_LAYER_10 SHIFT_LAYER_20 SHIFT_LAYER_30
+ALAY_0 ALAY_10 ALAY_20 ALAY_0
 
-# Drop layer
+# Drop layer (unused)
 layer_2
-NO NO NO NO NO NO NO NO NO NO NO NO NO NO
-NO NO NO NO NO NO NO NO NO NO NO NO NO NO
-NO NO NO NO NO NO NO NO NO NO NO NO NO NO
-NO NO NO NO NO NO NO NO NO NO NO NO NO NO
-CTRL      WIN ALT SHIFT_LAYER_2 NO SHIFT_LAYER_4 NO NO RIGHT_ALT SHIFT_LAYER_1 NO NO NO
+NO   NO  NO  NO     NO NO     NO NO NO        NO     NO NO NO NO
+NO   NO  NO  NO     NO NO     NO NO NO        NO     NO NO NO NO
+NO   NO  NO  NO     NO NO     NO NO NO        NO     NO NO NO NO
+NO   NO  NO  NO     NO NO     NO NO NO        NO     NO NO NO NO
+CTRL WIN ALT ALAY_2 NO ALAY_4 NO NO RIGHT_ALT ALAY_1 NO NO NO NO
 # grounded CTRLs:
-SHIFT_LAYER_0 SHIFT_LAYER_10 SHIFT_LAYER_20 SHIFT_LAYER_30
+ALAY_0 ALAY_10 ALAY_20 ALAY_0
 
-# Raise layer (Cursor movement)
-layer_4
-NO NO NO NO NO NO NO NO NO NO NO NO NO NO
-NO NO NO PAGE_UP NO NO NO NO UP_ARROW NO NO NO NO NO
-NO NO HOME  PAGE_DOWN END NO NO LEFT_ARROW DOWN_ARROW RIGHT_ARROW NO NO NO NO
-SHIFT NO NO NO NO NO NO NO NO NO NO NO NO NO
-CTRL      WIN ALT SHIFT_LAYER_2 NO SHIFT_LAYER_4 NO NO RIGHT_ALT SHIFT_LAYER_1 NO NO NO
+# FN+Drop layer (unused)
+layer_3
+NO   NO  NO  NO     NO NO     NO NO NO        NO     NO NO NO NO
+NO   NO  NO  NO     NO NO     NO NO NO        NO     NO NO NO NO
+NO   NO  NO  NO     NO NO     NO NO NO        NO     NO NO NO NO
+NO   NO  NO  NO     NO NO     NO NO NO        NO     NO NO NO NO
+CTRL WIN ALT ALAY_2 NO ALAY_4 NO NO RIGHT_ALT ALAY_1 NO NO NO NO
 # grounded CTRLs:
-SHIFT_LAYER_0 SHIFT_LAYER_10 SHIFT_LAYER_20 SHIFT_LAYER_30
+ALAY_0 ALAY_10 ALAY_20 ALAY_0
+
+# Raise layer (Cursor movement, numpad)
+layer_4
+NO    NO  NO   NO        NO  NO     NO NO         NO         NO          KP_NUMLOCK KP_/ KP_* KP_-
+NO    NO  NO   PAGE_UP   NO  NO     NO NO         UP_ARROW   NO          KP_7       KP_8 KP_9 BACKSPACE
+NO    NO  HOME PAGE_DOWN END NO     NO LEFT_ARROW DOWN_ARROW RIGHT_ARROW KP_4       KP_5 KP_6 KP_+
+SHIFT NO  NO   NO        NO  NO     NO NO         NO         NO          KP_1       KP_2 KP_3 KP_ENTER
+CTRL  WIN ALT  ALAY_2    NO  ALAY_4 NO NO         RIGHT_ALT  ALAY_1      KP_0       KP_. BSP  KP_ENTER
+# grounded CTRLs:
+ALAY_0 ALAY_10 ALAY_20 ALAY_0
+
+# Fn+Raise layer (unused)
+layer_5
+NO   NO  NO  NO     NO NO     NO NO NO        NO     NO NO NO NO
+NO   NO  NO  NO     NO NO     NO NO NO        NO     NO NO NO NO
+NO   NO  NO  NO     NO NO     NO NO NO        NO     NO NO NO NO
+NO   NO  NO  NO     NO NO     NO NO NO        NO     NO NO NO NO
+CTRL WIN ALT ALAY_2 NO ALAY_4 NO NO RIGHT_ALT ALAY_1 NO NO NO NO
+# grounded CTRLs:
+ALAY_0 ALAY_10 ALAY_20 ALAY_0
+
+
+# Drop+Raise layer (unused)
+layer_6
+NO   NO  NO  NO     NO NO     NO NO NO        NO     NO NO NO NO
+NO   NO  NO  NO     NO NO     NO NO NO        NO     NO NO NO NO
+NO   NO  NO  NO     NO NO     NO NO NO        NO     NO NO NO NO
+NO   NO  NO  NO     NO NO     NO NO NO        NO     NO NO NO NO
+CTRL WIN ALT ALAY_2 NO ALAY_4 NO NO RIGHT_ALT ALAY_1 NO NO NO NO
+# grounded CTRLs:
+ALAY_0 ALAY_10 ALAY_20 ALAY_0
+
+
+# Fn+Drop+Raise layer (unused)
+layer_5
+NO   NO  NO  NO     NO NO     NO NO NO        NO     NO NO NO NO
+NO   NO  NO  NO     NO NO     NO NO NO        NO     NO NO NO NO
+NO   NO  NO  NO     NO NO     NO NO NO        NO     NO NO NO NO
+NO   NO  NO  NO     NO NO     NO NO NO        NO     NO NO NO NO
+CTRL WIN ALT ALAY_2 NO ALAY_4 NO NO RIGHT_ALT ALAY_1 NO NO NO NO
+# grounded CTRLs:
+ALAY_0 ALAY_10 ALAY_20 ALAY_0
 
 # Numpad layer
 layer_10
-NO        NO  NO         NO         NO            NO      NO    NO NO NO KP_NUMLOCK KP_/ KP_*      KP_-
-TAB       NO  NO         UP_ARROW   NO            NO      Y     U  I  O  KP_7       KP_8 KP_9      KP_+
-CAPS_LOCK A   LEFT_ARROW DOWN_ARROW RIGHT_ARROW   G       H     J  K  L  KP_4       KP_5 KP_6      KP_+
-SHIFT     Z   X          C          V             B       N     M  ,  .  KP_1       KP_2 KP_3      KP_ENTER
-CTRL      WIN ALT        NO         SPACE         NO      SPACE NO NO NO KP_0       KP_. BACKSPACE KP_ENTER
+NO        NO  NO         NO         NO           NO NO    NO NO NO KP_NUMLOCK KP_/ KP_* KP_-
+TAB       NO  NO         UP_ARROW   NO           NO NO    NO NO NO KP_7       KP_8 KP_9 BSP
+CAPS_LOCK NO  LEFT_ARROW DOWN_ARROW RIGHT_ARROW  NO NO    NO NO NO KP_4       KP_5 KP_6 KP_+
+SHIFT     NO  NO         NO         NO           NO NO    NO ,  .  KP_1       KP_2 KP_3 KP_ENTER
+CTRL      WIN ALT        NO         SPACE        NO SPACE NO NO NO KP_0       KP_. BSP  KP_ENTER
 # grounded CTRLs:
-SHIFT_LAYER_0 SHIFT_LAYER_10 SHIFT_LAYER_20 SHIFT_LAYER_30
+ALAY_0 ALAY_10 ALAY_20 ALAY_0
 
+# Unused selectable layer
 layer_20
-NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO
-NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO
-NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO
-NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO
-NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO
+NO NO NO NO NO NO NO NO NO NO NO NO NO
+NO NO NO NO NO NO NO NO NO NO NO NO NO
+NO NO NO NO NO NO NO NO NO NO NO NO NO
+NO NO NO NO NO NO NO NO NO NO NO NO NO
+NO NO NO NO NO NO NO NO NO NO NO NO NO
 # grounded CTRLs:
-SHIFT_LAYER_0 SHIFT_LAYER_10 SHIFT_LAYER_20 SHIFT_LAYER_30
-
-layer_30
-NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO
-NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO
-NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO
-NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO
-NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO NO
-# grounded CTRLs:
-SHIFT_LAYER_0 SHIFT_LAYER_10 SHIFT_LAYER_20 SHIFT_LAYER_30
+ALAY_0 ALAY_10 ALAY_20 ALAY_0
 
 columns
 # left side of split
@@ -92,7 +126,10 @@ rows
 4
 
 ground
+# Normal mode, types and has some layers
 15
+# Dedicated numpad mode
 14
 13
+# this one also unlocks configuration mode during boot, but is identical to normal otherwise
 12

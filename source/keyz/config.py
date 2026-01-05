@@ -98,15 +98,15 @@ def generate_key_action(keyname):
         pass
 
     # check if this is a layer setter:
-    if keyname[0:10] == 'SET_LAYER_':
-        action.data = int(keyname[10:])
+    if keyname[0:10] == 'SLAY_':
+        action.data = int(keyname[5:])
         action.handler = handlers["layer_set"]
         return action
     
-    # check if this is a layer shifter:
-    if keyname[0:12] == 'SHIFT_LAYER_':
-        action.data = int(keyname[12:])
-        action.handler = handlers["layer_shift"]
+    # check if this is a layer adder:
+    if keyname[0:12] == 'ALAY_':
+        action.data = int(keyname[6:])
+        action.handler = handlers["layer_add"]
         return action
 
     # return if nothing matches

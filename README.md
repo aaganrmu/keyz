@@ -20,12 +20,12 @@ Use keys as defined in keycode.py
 ## Layers
 
 Two options that can be combined:
-Keys defined as `SET_LAYER_#` will set your layer to # until a different layer is set.
-Keys defined as `SHIFT_LAYER_#` will increase your layer by # while held. You can combine multiple shifts with a set.
+Keys defined as `SLAY_#` will set your layer to # until a different layer is set.
+Keys defined as `ALAY_#` will increase your layer by # while held. You can combine multiple shifts with a set.
 
 Create layers for all options using `layer_#`
 Default layer is 0
-Keep `SHIFT_LAYER_#` definitions constant between layers or there will be glitches.
+Keep `ALAY_#` definitions constant between layers or there will be glitches.
 
 ## Password generator
 

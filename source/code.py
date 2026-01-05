@@ -66,7 +66,7 @@ while True:
         continue
 
     # Layer actions
-    if action.handler == handlers["layer_shift"]:
+    if action.handler == handlers["layer_add"]:
         refresh = layer.set_shift(action.data, pressed)
         if refresh:
             keyboard.release_all()
